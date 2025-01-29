@@ -1,10 +1,9 @@
-import { Button } from "@/components/ui/button";
+import HomePage from '../components/homepage';
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
-      <h1>Service Nexus</h1>
-      <Button>Click me</Button>
+      <HomePage />
     </div>
   );
 }
