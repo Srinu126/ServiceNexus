@@ -15,6 +15,20 @@
       "when": 1738014966143,
       "tag": "0001_colorful_eddie_brock",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1738291030347,
+      "tag": "0002_flowery_silk_fever",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1738505598740,
+      "tag": "0003_numerous_blazing_skull",
+      "breakpoints": true
     }
   ]
 }

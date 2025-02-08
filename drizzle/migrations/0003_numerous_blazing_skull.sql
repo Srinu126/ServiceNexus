@@ -1,0 +1,1 @@
+ALTER TABLE "users" ADD COLUMN "phone" text DEFAULT '+1 (555) 555-5555';
