@@ -16,6 +16,7 @@ export const users = pgTable("users", {
     email: text("email").unique(),
     emailVerified: timestamp("emailVerified", { mode: "date" }),
     image: text("image"),
+    phone: text("phone").default("+1 (555) 555-5555"),
   })
    
   export const accounts = pgTable(

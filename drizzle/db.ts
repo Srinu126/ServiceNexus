@@ -6,11 +6,11 @@ import { Pool } from "pg";
 dotenv.config();
 
 export const client = new Pool({
-  host: process.env.HOST,
+  host: "localhost",
   port: 5432,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  user: "postgres",
+  password: "srinu",
+  database: "servicenexusone",
 });
 
 export const db = drizzle(client, { schema });
