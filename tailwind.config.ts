@@ -10,6 +10,10 @@ export default {
   theme: {
   	extend: {
   		colors: {
+			primary: "#00040f",
+            secondary: "#00f6ff",
+            dimWhite: "rgba(255, 255, 255, 0.7)",
+            dimBlue: "rgba(9, 151, 124, 0.1)",
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -19,14 +23,6 @@ export default {
   			popover: {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
-  			},
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
   			},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
@@ -78,7 +74,15 @@ export default {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
-  	}
+  	},
+	screens: {
+		xs: "480px",
+		ss: "620px",
+		sm: "768px",
+		md: "1060px",
+		lg: "1200px",
+		xl: "1700px",
+	},
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
