@@ -5,25 +5,25 @@ export const feedback = [
     {
       id: "feedback-1",
       content:
-        "Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver.",
-      name: "Herman Jensen",
-      title: "Founder & Leader",
+        "I’ve struggled to find trustworthy professionals for home repairs, but Service Nexus made it incredibly easy! I booked an electrician within minutes, and the service was top-notch. Highly recommended!",
+      name: "Sophia L.",
+      title: "Toronto, Canada",
       img: "/people01.png",
     },
     {
       id: "feedback-2",
       content:
-        "Money makes your life easier. If you're lucky to have it, you're lucky.",
-      name: "Steve Mark",
-      title: "Founder & Leader",
+        "I needed urgent plumbing repairs, and Service Nexus connected me with an expert in no time. The provider was professional, on time, and the pricing was transparent. This platform is a lifesaver!",
+      name: "James R.",
+      title: "Waterloo, Canada",
       img: "/people02.png",
     },
     {
       id: "feedback-3",
       content:
-        "It is usually people in the money business, finance, and international trade that are really rich.",
-      name: "Kenn Gallagher",
-      title: "Founder & Leader",
+        "I run a small cleaning business, and joining Service Nexus has helped me reach more customers than ever. The seamless booking system and fair payment process make it an excellent platform for both providers and customers!",
+      name: "John M.",
+      title: "Ottawa, Canada",
       img: "/people03.png",
     },
   ];
@@ -41,7 +41,7 @@ const Testimonials = () => (
       </h2>
     </div>
 
-    <div className="flex flex-wrap sm:justify-start justify-center w-full feedback-container relative z-[1]">
+    <div className="flex flex-wrap justify-center w-full feedback-container relative z-[1]">
       {feedback.map((card) => (
         <FeedbackCard key={card.id} {...card} />
       ))}

@@ -11,6 +11,7 @@ import Service from "./Service";
 import Hero from "./Hero";
 import Testimonials from "./Testimonials";
 import CTA from "./CTA";
+import FAQ from "./FAQ";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
       <Hero />
       <Testimonials />
       <CTA />
+      <FAQ/>
     </>
   );
 };

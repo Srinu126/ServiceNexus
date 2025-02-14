@@ -69,13 +69,13 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto py-12 px-4">
+    <div className="max-w-2xl text-white mx-auto py-12 px-4">
       <h1 className="text-3xl font-bold mb-8">Your Profile</h1>
       <div className="space-y-4">
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium"
           >
             Name
           </label>
@@ -90,7 +90,7 @@ const ProfilePage = () => {
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium "
           >
             Email
           </label>
@@ -106,7 +106,7 @@ const ProfilePage = () => {
         <div>
           <label
             htmlFor="phone"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium "
           >
             Phone
           </label>
@@ -119,7 +119,7 @@ const ProfilePage = () => {
           />
         </div>
       </div>
-      <Button onClick={handleUpdateProfile} className="mt-6" disabled={loading}>
+      <Button onClick={handleUpdateProfile} className="mt-6 " disabled={loading}>
         {loading ? "Updating..." : "Update Profile"}
       </Button>
     </div>
