@@ -25,7 +25,8 @@ export default function Service({ service }) {
         alt={service.title}
         width={500}
         height={200}
-        className="h-[150px] md:h-[200px] object-cover rounded-lg"
+        className="h-[150px] md:h-[200px] object-cover"
+        style={{borderRadius:"5% 5% 0 0"}}
       />
       <div className="flex flex-col items-baseline p-3 gap-1">
         <h2 className="p-1 bg-cyan-300 text-cyan-900 rounded-full regular-14 px-2">
