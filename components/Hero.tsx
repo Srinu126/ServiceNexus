@@ -43,10 +43,11 @@ const Hero = () => {
         className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}
       >
         <img
-          src="/hero.webp"
+          // src="/hero.webp"
+          src="/heroOne.jpg"
           alt="billing"
           className="w-[100%] h-[100%] relative z-[5]"
-          style={{borderRadius:"20%"}}
+          style={{borderRadius:"50%"}}
         />
 
         {/* gradient start */}

@@ -2,7 +2,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { NavigationMenuDemo } from "./navigationdemo";
+import { NavigationMenuDemo } from "./HeaderNavigation";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -54,6 +54,7 @@ import {
 //   </div>
 // </header>
 import { useState } from "react";
+import Link from "next/link";
 
 const SignInFunc = () => {
   const { data: session } = useSession();
@@ -113,12 +114,16 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src="/logo.svg" alt="hoobank" className="w-[220px] h-[64px]" />
+      <Link href="/">
+        <img src="/logo.svg" alt="hoobank" className="w-[220px] h-[64px]" />
+      </Link>
 
       <ul className="list-none sm:flex hidden mt-2.5 justify-start items-center flex-1">
         <NavigationMenuDemo />
       </ul>
-      <div className="hidden sm:flex"><SignInFunc /></div>
+      <div className="hidden sm:flex">
+        <SignInFunc />
+      </div>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <SignInFunc />

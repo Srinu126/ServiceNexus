@@ -17,37 +17,37 @@ import {
 const services: { title: string; href: string; description: string }[] = [
   {
     title: "Home Cleaning",
-    href: "/services/home-cleaning",
+    href: "/services/Home_Cleaning_Service",
     description:
       "Professional cleaning services for homes, ensuring a sparkling clean environment tailored to your needs.",
   },
   {
     title: "Plumbing",
-    href: "/services/plumbing",
+    href: "/services/Plumbing_Repairs",
     description:
       "Experienced plumbers offering repair and maintenance for all plumbing needs, from leaks to installations.",
   },
   {
     title: "Electrical Services",
-    href: "/services/electrical",
+    href: "/services/Electrical_Works",
     description:
       "Skilled electricians ready to handle electrical installations, repairs, and inspections safely and efficiently.",
   },
   {
     title: "Gardening",
-    href: "/services/gardening",
+    href: "/services/Gardening_and_Landscaping",
     description:
       "Comprehensive gardening services, including lawn care, landscaping, and garden design for a lush, vibrant space.",
   },
   {
-    title: "Pest Control",
-    href: "/services/pest-control",
+    title: "Cooking and Catering",
+    href: "/services/Cooking_and_Catering",
     description:
-      "Effective pest control solutions to keep your home or office free from unwanted pests and infestations.",
+      "Delicious meals and catering services.",
   },
   {
     title: "Handyman Services",
-    href: "/services/handyman",
+    href: "/services/Car_Repair_and_Maintenance",
     description:
       "Versatile handyman services for various tasks, including repairs, maintenance, and home improvement projects.",
   },
@@ -67,6 +67,7 @@ export function NavigationMenuDemo() {
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
+                    <img src="/plumbing.webp" alt="navigation" className="w-3/4 h-1/2"/>
                     <div className="mb-2 mt-4 text-lg font-medium">
                       ServiceNexus
                     </div>
