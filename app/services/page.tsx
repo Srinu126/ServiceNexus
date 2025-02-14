@@ -36,7 +36,7 @@ const ServicesList = () => {
           : [1, 2, 3, 4, 5, 7, 8, 9].map((item, index) => (
               <div
                 key={index}
-                className="h-[300px] w-full bg-gray-300 animate-pulse rounded-lg"
+                className="h-[300px] w-full bg-gray-300 animate-pulse rounded-3xl"
               ></div>
             ))}
       </div>

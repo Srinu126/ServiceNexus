@@ -36,6 +36,7 @@ export default function RootLayout({
               <div className="xl:max-w-[1280px] w-full">
                 <Header />
                 <main className="flex-grow min-h-screen">{children}</main>
+                <Footer/>
               </div>
             </div>
           </div>
