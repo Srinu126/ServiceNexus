@@ -3,9 +3,9 @@ import { db } from "../../../../drizzle/db";
 import { services } from "../../../../drizzle/schema/";
 import { eq } from "drizzle-orm";
 
-export async function GET(req: NextRequest, { params }: { params: { title: string } }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ title: string }> }) {
   try {
-    const { title } = params;
+    const { title } = await params;
 
     const formattedTitle = title.replace(/_/g, " ").trim().toLowerCase();
 

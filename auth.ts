@@ -12,6 +12,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     sessionsTable: sessions,
   }),
   providers: [Google],
+  trustHost: true,
   callbacks: {
     async signIn({}) {
       try {

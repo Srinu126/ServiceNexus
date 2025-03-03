@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { db } from "@/drizzle/db";
 import { services, serviceProviders } from "@/drizzle/schema";
 import { eq, inArray } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
-const ServiceDetailPage = async ({ params }: { params: { title: string } }) => {
+const ServiceDetailPage = async ({ params }: { params: Promise<{ title: string }> }) => {
   const { title } = await params;
   const formattedTitle = decodeURIComponent(title.replace(/_/g, " "));
 
@@ -51,11 +52,11 @@ const ServiceDetailPage = async ({ params }: { params: { title: string } }) => {
 };
 
 const ServiceCard = ({ service }: { service: any }) => {
-  const handleBooking = () => {
-    Toast({
-      title: "Booking Confirmed",
-    });
-  };
+  // const handleBooking = () => {
+  //   Toast({
+  //     title: "Booking Confirmed",
+  //   });
+  // };
 
   return (
     <div className="mt-5 p-5 bg-gray-800 rounded-lg shadow-md">

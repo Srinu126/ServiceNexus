@@ -73,10 +73,7 @@ const ProfilePage = () => {
       <h1 className="text-3xl font-bold mb-8">Your Profile</h1>
       <div className="space-y-4">
         <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium"
-          >
+          <label htmlFor="name" className="block text-sm font-medium">
             Name
           </label>
           <Input
@@ -88,10 +85,7 @@ const ProfilePage = () => {
           />
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium "
-          >
+          <label htmlFor="email" className="block text-sm font-medium ">
             Email
           </label>
           <Input
@@ -104,10 +98,7 @@ const ProfilePage = () => {
           />
         </div>
         <div>
-          <label
-            htmlFor="phone"
-            className="block text-sm font-medium "
-          >
+          <label htmlFor="phone" className="block text-sm font-medium ">
             Phone
           </label>
           <Input
@@ -119,7 +110,11 @@ const ProfilePage = () => {
           />
         </div>
       </div>
-      <Button onClick={handleUpdateProfile} className="mt-6 " disabled={loading}>
+      <Button
+        onClick={handleUpdateProfile}
+        className="mt-6 "
+        disabled={loading}
+      >
         {loading ? "Updating..." : "Update Profile"}
       </Button>
     </div>
