@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
+import * as React from "react";
+import Link from "next/link";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,7 +12,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
+import { useSession } from "next-auth/react";
 
 const services: { title: string; href: string; description: string }[] = [
   {
@@ -42,8 +43,7 @@ const services: { title: string; href: string; description: string }[] = [
   {
     title: "Cooking and Catering",
     href: "/services/Cooking_and_Catering",
-    description:
-      "Delicious meals and catering services.",
+    description: "Delicious meals and catering services.",
   },
   {
     title: "Handyman Services",
@@ -51,9 +51,10 @@ const services: { title: string; href: string; description: string }[] = [
     description:
       "Versatile handyman services for various tasks, including repairs, maintenance, and home improvement projects.",
   },
-]
+];
 
 export function NavigationMenuDemo() {
+  const { data: session } = useSession();
   return (
     <NavigationMenu className="text-white">
       <NavigationMenuList>
@@ -67,12 +68,17 @@ export function NavigationMenuDemo() {
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    <img src="/plumbing.webp" alt="navigation" className="w-3/4 h-1/2"/>
+                    <img
+                      src="/plumbing.webp"
+                      alt="navigation"
+                      className="w-3/4 h-1/2"
+                    />
                     <div className="mb-2 mt-4 text-lg font-medium">
                       ServiceNexus
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Connecting you with trusted professionals for all your service needs.
+                      Connecting you with trusted professionals for all your
+                      service needs.
                     </p>
                   </Link>
                 </NavigationMenuLink>
@@ -92,7 +98,7 @@ export function NavigationMenuDemo() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>
             <Link href="/services">Services</Link>
-            </NavigationMenuTrigger>
+          </NavigationMenuTrigger>
           <NavigationMenuContent className="navbar-card">
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {services.map((service) => (
@@ -108,15 +114,24 @@ export function NavigationMenuDemo() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/contact" legacyBehavior passHref>
+          <Link href="/bookings" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contact US
+              My Bookings
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+        {session?.user && (
+          <NavigationMenuItem>
+            <Link href="/create-service" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Create Service
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        )}
       </NavigationMenuList>
     </NavigationMenu>
-  )
+  );
 }
 
 const ListItem = React.forwardRef<
@@ -141,6 +156,6 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
+  );
+});
+ListItem.displayName = "ListItem";

@@ -1,9 +1,9 @@
-import { pgTable, serial, text, numeric, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, numeric, timestamp, integer } from "drizzle-orm/pg-core";
 import { serviceProviders } from "./service_providers";
 
 export const services = pgTable("services", {
   id: serial("id").primaryKey(),
-  providerId: serial("provider_id")
+  providerId: integer("provider_id")
     .references(() => serviceProviders.id, { onDelete: "cascade" })
     .notNull(),
   title: text("title").notNull(),
