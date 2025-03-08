@@ -4,7 +4,7 @@ import { services } from "../../../drizzle/schema/";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-    console.log(req, "req");
+  
   if (req.method !== "POST") {
     return NextResponse.json({ error: "Method not allowed" }, {status: 400});
   }
@@ -20,29 +20,27 @@ export async function POST(req: NextRequest) {
           );
     }
 
-    const existingService = await db
-  .select()
-  .from(services)
-  .where(
-    and(
-      eq(services.providerId, providerId),
-      eq(services.title, title),
-      eq(services.category, category)
-    )
-  )
-  .limit(1);
+  //   const existingService = await db
+  // .select()
+  // .from(services)
+  // .where(
+  //   and(
+  //     eq(services.providerId, providerId),
+  //     eq(services.title, title),
+  //     eq(services.category, category)
+  //   )
+  // )
+  // .limit(1);
 
-  if (existingService.length > 0) {
-    return NextResponse.json(
-      { error: "Service already exists with the same providerId, title, and category." },
-      { status: 400 }
-    );
-  }
-
-    
+  // if (existingService.length > 0) {
+  //   return NextResponse.json(
+  //     { error: "Service already exists with the same providerId, title, and category." },
+  //     { status: 400 }
+  //   );
+  // }
 
     const result = await db.insert(services).values({
-      providerId,
+      providerId: Number(providerId),
       title,
       description,
       category,
@@ -52,7 +50,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ message: "Service created successfully", result }, {status: 201});
   } catch (error) {
-    console.error("Error creating service:", error);
+    console.error("Error creating service:", error.message, error.stack);
     return NextResponse.json(
         { error: "Failed to create a service." },
         { status: 500 }
