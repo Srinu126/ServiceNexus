@@ -19,7 +19,7 @@ interface BusinessInfoProps {
 const BusinessInfo: React.FC<BusinessInfoProps> = ({ business }) => {
   return (
     business?.name && (
-      <div className="md:flex gap-6 items-center bg-gray-900 p-6 rounded-2xl shadow-lg">
+      <div className="md:flex gap-6 items-center  p-6 rounded-2xl shadow-lg">
         <Image
           src={business.image[0].url}
           alt={business.name}
@@ -36,24 +36,24 @@ const BusinessInfo: React.FC<BusinessInfoProps> = ({ business }) => {
               {business.name}
             </h2>
             <h2 className="flex items-center gap-2 text-lg text-gray-400">
-              <MapPin className="text-purple-400" />
+              <MapPin className="text-cyan-600" />
               {business.address}
             </h2>
             <h2 className="flex items-center gap-2 text-lg text-gray-400">
-              <Mail className="text-purple-400" />
+              <Mail className="text-cyan-600" />
               {business.email}
             </h2>
           </div>
           <div className="flex flex-col gap-5 items-end">
-            <Button className="bg-purple-600 hover:bg-purple-500 text-white p-3 rounded-xl shadow-md">
+            <Button className="bg-cyan-600 hover:bg-cyan-500 text-white p-3 rounded-xl shadow-md">
               <Share className="w-5 h-5" />
             </Button>
             <h2 className="flex items-center gap-2 text-lg font-medium text-gray-300">
-              <User className="text-purple-400" />
+              <User className="text-cyan-600" />
               {business.contactPerson}
             </h2>
             <h2 className="flex items-center gap-2 text-lg font-medium text-gray-300">
-              <Clock className="text-purple-400" />
+              <Clock className="text-cyan -400" />
               Available 8:00 AM to 10:00 PM
             </h2>
           </div>

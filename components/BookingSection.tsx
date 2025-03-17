@@ -131,9 +131,9 @@ const BookingSection = ({ children }: BookingSectionProps) => {
                     key={index}
                     disabled={isSlotBooked(item.time)}
                     variant="outline"
-                    className={`border border-gray-500 rounded-full p-2 px-3 hover:bg-purple-600 hover:text-white ${
+                    className={`border border-gray-500 rounded-full p-2 px-3 hover:bg-cyan-700 hover:text-white ${
                       selectedTime === item.time
-                        ? "bg-purple-600 text-white"
+                        ? "bg-cyan-600 text-white"
                         : "bg-dark-700"
                     }`}
                     onClick={() => setSelectedTime(item.time)}
@@ -147,11 +147,11 @@ const BookingSection = ({ children }: BookingSectionProps) => {
           <SheetFooter className="mt-5">
             <SheetClose asChild>
               <div className="flex gap-5">
-                <Button className="bg-purple-700 text-white hover:bg-purple-800">
+                <Button className="bg-cyan-700 text-white hover:bg-cyan-800">
                   Cancel
                 </Button>
                 <Button
-                  className="bg-purple-600 text-white hover:bg-purple-700"
+                  className="bg-cyan-600 text-white hover:bg-cyan-700"
                   disabled={!(selectedTime && date)}
                   onClick={saveBooking}
                 >

@@ -14,28 +14,35 @@ const categoryImages = {
 };
 
 export default function Service({ service }) {
-  const tel = service.title.trim().replace(/\s+/g,"_");
+  const tel = service.title.trim().replace(/\s+/g, "_");
+
   return (
     <Link
       href={"/services/" + tel}
-      className="shadow-md rounded-lg hover:shadow-lg cursor-pointer hover:shadow-cyan-400 hover:scale-105 transition-all ease-in-out bg-gray-900"
+      className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out"
     >
-      <Image
-        src={categoryImages[service.category] || "/images/default.jpg"} // Fallback image
-        alt={service.title}
-        width={500}
-        height={200}
-        className="h-[150px] md:h-[200px] object-cover"
-        style={{borderRadius:"5% 5% 0 0"}}
-      />
-      <div className="flex flex-col items-baseline p-3 gap-1">
-        <h2 className="p-1 bg-cyan-300 text-cyan-900 rounded-full regular-14 px-2">
-          {service.category}
-        </h2>
-        <h2 className="font-bold text-lg text-white">{service.title}</h2>
-        <h2 className="text-cyan-400">{service.mainKeywords}</h2>
-        <h2 className="text-gray-400 text-sm">${service.price}</h2>
-        <Button className="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-semibold px-4 py-2 rounded-lg mt-3 transition-all ease-in-out">
+      <div className="relative">
+        <Image
+          src={categoryImages[service.category] || "/images/default.jpg"}
+          alt={service.title}
+          width={500}
+          height={200}
+          className="h-[200px] w-full object-cover rounded-t-2xl"
+          priority
+        />
+      </div>
+
+      <div className="p-5 flex flex-col justify-between gap-4">
+        <div className="flex flex-wrap gap-2">
+          <span className="bg-cyan-300 text-cyan-900 text-sm font-semibold px-3 py-1 rounded-full">
+            {service.category}
+          </span>
+        </div>
+        <h3 className="text-2xl font-semibold text-white truncate">{service.title}</h3>
+        <p className="text-cyan-400 text-md">{service.mainKeywords}</p>
+        <p className="text-gray-400 text-sm">${service.price}</p>
+
+        <Button className="mt-4 bg-cyan-500 hover:bg-cyan-400 text-black shadow-md rounded-lg py-2 transition-all duration-200">
           Book Now
         </Button>
       </div>
